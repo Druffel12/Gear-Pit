@@ -1,14 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Level1Load : MonoBehaviour
 {
     public GameObject loadingImage;
 
-    public void LoadScene(int level)
+    public void LoadLevel(string Level1)
     {
-        loadingImage.SetActive(true);
-        Application.LoadLevel(level);
+        SceneManager.LoadScene(Level1);
     }
 }
