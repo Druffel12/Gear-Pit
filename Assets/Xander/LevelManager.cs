@@ -69,4 +69,45 @@ public class LevelManager : MonoBehaviour {
         }
     }
 
+
+
+    public Transform FindClosestBotTo(Vector3 pos, int team)
+    {
+        Transform closestEnemy = null;
+        if(team == 1)
+        {
+            foreach (GameObject b in team1)
+            {
+                if (closestEnemy == null)
+                {
+                    closestEnemy = b.transform;
+                }
+                else if (Vector3.Distance(b.transform.position, pos) <
+                         Vector3.Distance(closestEnemy.position, pos))
+                {
+                    closestEnemy = b.transform;
+                }
+            }
+        }
+        else
+        {
+            foreach (GameObject b in team2)
+            {
+                if (closestEnemy == null)
+                {
+                    closestEnemy = b.transform;
+                }
+                else if (Vector3.Distance(b.transform.position, pos) <
+                         Vector3.Distance(closestEnemy.position, pos))
+                {
+                    closestEnemy = b.transform;
+                }
+            }
+        }
+
+        return closestEnemy;
+    }
+
+
+
 }
