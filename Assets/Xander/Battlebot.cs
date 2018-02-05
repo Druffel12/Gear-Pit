@@ -79,7 +79,8 @@ public class Battlebot : MonoBehaviour {
     
     private void Kill()
     {
-        Destroy(gameObject);
+        //Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 
 }
