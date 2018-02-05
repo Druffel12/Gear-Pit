@@ -21,11 +21,13 @@ public class LevelManager : MonoBehaviour {
         {
             GameObject bot = Instantiate(StaticBotList.team1[i]);
             bot.transform.position = spawn1.position;
+            bot.GetComponent<Battlebot>().team = 1;
         }
         for (int i = 0; i < team2.Length; ++i)
         {
             GameObject bot = Instantiate(StaticBotList.team2[i]);
             bot.transform.position = spawn2.position;
+            bot.GetComponent<Battlebot>().team = 2;
         }
     }
 
@@ -66,5 +68,46 @@ public class LevelManager : MonoBehaviour {
             yield return null;
         }
     }
+
+
+
+    public Transform FindClosestBotTo(Vector3 pos, int team)
+    {
+        Transform closestEnemy = null;
+        if(team == 1)
+        {
+            foreach (GameObject b in team1)
+            {
+                if (closestEnemy == null)
+                {
+                    closestEnemy = b.transform;
+                }
+                else if (Vector3.Distance(b.transform.position, pos) <
+                         Vector3.Distance(closestEnemy.position, pos))
+                {
+                    closestEnemy = b.transform;
+                }
+            }
+        }
+        else
+        {
+            foreach (GameObject b in team2)
+            {
+                if (closestEnemy == null)
+                {
+                    closestEnemy = b.transform;
+                }
+                else if (Vector3.Distance(b.transform.position, pos) <
+                         Vector3.Distance(closestEnemy.position, pos))
+                {
+                    closestEnemy = b.transform;
+                }
+            }
+        }
+
+        return closestEnemy;
+    }
+
+
 
 }
