@@ -22,12 +22,14 @@ public class LevelManager : MonoBehaviour {
             GameObject bot = Instantiate(StaticBotList.team1[i]);
             bot.transform.position = spawn1.position;
             bot.GetComponent<Battlebot>().team = 1;
+            team1[i] = bot;
         }
         for (int i = 0; i < team2.Length; ++i)
         {
             GameObject bot = Instantiate(StaticBotList.team2[i]);
             bot.transform.position = spawn2.position;
             bot.GetComponent<Battlebot>().team = 2;
+            team2[i] = bot;
         }
     }
 
