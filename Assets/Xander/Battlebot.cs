@@ -42,6 +42,12 @@ public class Battlebot : MonoBehaviour {
             teamIcon.GetComponent<Image>().color = Color.red;
         }
 
+        int i = 0;
+        for(i = i; i < 5; ++i)
+        {
+
+        }
+
         agent.enabled = true;
     }
 
