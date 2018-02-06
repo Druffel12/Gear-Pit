@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class Battlebot : MonoBehaviour {
 
@@ -13,6 +14,7 @@ public class Battlebot : MonoBehaviour {
     private NavMeshAgent agent;
     private Transform bulletSpawn;
     private RectTransform healthBar;
+    private GameObject teamIcon;
 
     private float health;
     private float gunHeat = 0;
@@ -28,7 +30,17 @@ public class Battlebot : MonoBehaviour {
         agent = GetComponent<NavMeshAgent>();
         bulletSpawn = transform.Find("BulletSpawn");
         healthBar = transform.Find("Canvas").Find("HealthBackground").Find("Health").GetComponent<RectTransform>();
+        teamIcon = transform.Find("Canvas").Find("TeamIcons").gameObject;
         health = maxHealth;
+
+        if(team == 1)
+        {
+            teamIcon.GetComponent<Image>().color = Color.blue;
+        }
+        else
+        {
+            teamIcon.GetComponent<Image>().color = Color.red;
+        }
 
         agent.enabled = true;
     }
