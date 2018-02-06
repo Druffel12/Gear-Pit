@@ -25,7 +25,7 @@ public class LevelManager : MonoBehaviour {
         {
             team1 = new GameObject[StaticBotList.team1.Length];
             team2 = new GameObject[StaticBotList.team2.Length];
-            for (int i = 0; i < team2.Length; ++i)
+            for (int i = 0; i < team1.Length; ++i)
             {
                 GameObject bot = Instantiate(StaticBotList.team1[i]);
                 Vector2 spawnPos = Random.insideUnitCircle * spawnRadius;
@@ -50,7 +50,7 @@ public class LevelManager : MonoBehaviour {
         {
             team1 = new GameObject[15];
             team2 = new GameObject[15];
-            for (int i = 0; i < team2.Length; ++i)
+            for (int i = 0; i < team1.Length; ++i)
             {
                 GameObject bot = Instantiate(testBot);
                 Vector2 spawnPos = Random.insideUnitCircle * spawnRadius;
