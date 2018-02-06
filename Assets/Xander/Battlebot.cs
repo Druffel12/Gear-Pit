@@ -10,8 +10,8 @@ public class Battlebot : MonoBehaviour {
     public float gunCooldown = 0.25f;
     public float bulletDamage = 10.0f;
 
-    public NavMeshAgent agent;
-    public Transform bulletSpawn;
+    private NavMeshAgent agent;
+    private Transform bulletSpawn;
 
     private float health;
     private float gunHeat = 0;
@@ -24,6 +24,8 @@ public class Battlebot : MonoBehaviour {
 
     private void Start()
     {
+        agent = GetComponent<NavMeshAgent>();
+        bulletSpawn = transform.Find("BulletSpawn");
         health = maxHealth;
     }
 

@@ -8,10 +8,16 @@ public class TestTeamPopulation : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        StaticBotList.team1 = new GameObject[1];
-        StaticBotList.team1[0] = bot;
-        StaticBotList.team2 = new GameObject[1];
-        StaticBotList.team2[0] = bot;
+        StaticBotList.team1 = new GameObject[5];
+        for(int i = 0; i < StaticBotList.team1.Length; ++i)
+        {
+            StaticBotList.team1[i] = bot;
+        }
+        StaticBotList.team2 = new GameObject[5];
+        for (int i = 0; i < StaticBotList.team2.Length; ++i)
+        {
+            StaticBotList.team2[i] = bot;
+        }
     }
 	
 }

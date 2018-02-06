@@ -6,7 +6,9 @@ using UnityEngine.SceneManagement;
 
 
 public class LevelManager : MonoBehaviour {
-    
+
+    public float spawnRadius = 5f;
+
     public Transform spawn1;
     public Transform spawn2;
 
@@ -20,14 +22,20 @@ public class LevelManager : MonoBehaviour {
         for(int i = 0; i < team2.Length; ++i)
         {
             GameObject bot = Instantiate(StaticBotList.team1[i]);
-            bot.transform.position = spawn1.position;
+            Vector2 spawnPos = Random.insideUnitCircle * spawnRadius;
+            bot.transform.position = new Vector3(spawn1.position.x + spawnPos.x,
+                                                 spawn1.position.y,
+                                                 spawn1.position.z + spawnPos.y);
             bot.GetComponent<Battlebot>().team = 1;
             team1[i] = bot;
         }
         for (int i = 0; i < team2.Length; ++i)
         {
             GameObject bot = Instantiate(StaticBotList.team2[i]);
-            bot.transform.position = spawn2.position;
+            Vector2 spawnPos = Random.insideUnitCircle * spawnRadius;
+            bot.transform.position = new Vector3(spawn2.position.x + spawnPos.x,
+                                                 spawn2.position.y,
+                                                 spawn2.position.z + spawnPos.y);
             bot.GetComponent<Battlebot>().team = 2;
             team2[i] = bot;
         }
@@ -39,7 +47,7 @@ public class LevelManager : MonoBehaviour {
         bool team2alive = false;
         foreach(GameObject o in team1)
         {
-            if(o.activeSelf)
+            if(o.activeInHierarchy)
             {
                 team1alive = true;
                 break;
@@ -47,17 +55,18 @@ public class LevelManager : MonoBehaviour {
         }
         foreach (GameObject o in team2)
         {
-            if (o.activeSelf)
+            if (o.activeInHierarchy)
             {
                 team2alive = true;
                 break;
             }
         }
-
+        
         //change to game over screen eventually
         if(!team1alive || !team2alive)
         {
-            AsyncSceneLoader("MainMenu");
+            StartCoroutine(AsyncSceneLoader("MainMenu"));
+            Cursor.lockState = CursorLockMode.None;
         }
     }
 
