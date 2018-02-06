@@ -12,32 +12,64 @@ public class LevelManager : MonoBehaviour {
     public Transform spawn1;
     public Transform spawn2;
 
+    public bool testSpawn = false;
+    public GameObject testBot;
+    public GameObject testBot2;
+
     private GameObject[] team1;
     private GameObject[] team2;
 
     private void Start()
     {
-        team1 = new GameObject[StaticBotList.team1.Length];
-        team2 = new GameObject[StaticBotList.team2.Length];
-        for(int i = 0; i < team2.Length; ++i)
+        if(!testSpawn)
         {
-            GameObject bot = Instantiate(StaticBotList.team1[i]);
-            Vector2 spawnPos = Random.insideUnitCircle * spawnRadius;
-            bot.transform.position = new Vector3(spawn1.position.x + spawnPos.x,
-                                                 spawn1.position.y,
-                                                 spawn1.position.z + spawnPos.y);
-            bot.GetComponent<Battlebot>().team = 1;
-            team1[i] = bot;
+            team1 = new GameObject[StaticBotList.team1.Length];
+            team2 = new GameObject[StaticBotList.team2.Length];
+            for (int i = 0; i < team2.Length; ++i)
+            {
+                GameObject bot = Instantiate(StaticBotList.team1[i]);
+                Vector2 spawnPos = Random.insideUnitCircle * spawnRadius;
+                bot.transform.position = new Vector3(spawn1.position.x + spawnPos.x,
+                                                     spawn1.position.y,
+                                                     spawn1.position.z + spawnPos.y);
+                bot.GetComponent<Battlebot>().team = 1;
+                team1[i] = bot;
+            }
+            for (int i = 0; i < team2.Length; ++i)
+            {
+                GameObject bot = Instantiate(StaticBotList.team2[i]);
+                Vector2 spawnPos = Random.insideUnitCircle * spawnRadius;
+                bot.transform.position = new Vector3(spawn2.position.x + spawnPos.x,
+                                                     spawn2.position.y,
+                                                     spawn2.position.z + spawnPos.y);
+                bot.GetComponent<Battlebot>().team = 2;
+                team2[i] = bot;
+            }
         }
-        for (int i = 0; i < team2.Length; ++i)
+        else
         {
-            GameObject bot = Instantiate(StaticBotList.team2[i]);
-            Vector2 spawnPos = Random.insideUnitCircle * spawnRadius;
-            bot.transform.position = new Vector3(spawn2.position.x + spawnPos.x,
-                                                 spawn2.position.y,
-                                                 spawn2.position.z + spawnPos.y);
-            bot.GetComponent<Battlebot>().team = 2;
-            team2[i] = bot;
+            team1 = new GameObject[15];
+            team2 = new GameObject[15];
+            for (int i = 0; i < team2.Length; ++i)
+            {
+                GameObject bot = Instantiate(testBot);
+                Vector2 spawnPos = Random.insideUnitCircle * spawnRadius;
+                bot.transform.position = new Vector3(spawn1.position.x + spawnPos.x,
+                                                     spawn1.position.y,
+                                                     spawn1.position.z + spawnPos.y);
+                bot.GetComponent<Battlebot>().team = 1;
+                team1[i] = bot;
+            }
+            for (int i = 0; i < team2.Length; ++i)
+            {
+                GameObject bot = Instantiate(testBot2);
+                Vector2 spawnPos = Random.insideUnitCircle * spawnRadius;
+                bot.transform.position = new Vector3(spawn2.position.x + spawnPos.x,
+                                                     spawn2.position.y,
+                                                     spawn2.position.z + spawnPos.y);
+                bot.GetComponent<Battlebot>().team = 2;
+                team2[i] = bot;
+            }
         }
     }
 
@@ -89,11 +121,12 @@ public class LevelManager : MonoBehaviour {
         {
             foreach (GameObject b in team1)
             {
-                if (closestEnemy == null)
+                if (closestEnemy == null && b.activeInHierarchy)
                 {
                     closestEnemy = b.transform;
                 }
-                else if (Vector3.Distance(b.transform.position, pos) <
+                else if (b.activeInHierarchy &&
+                         Vector3.Distance(b.transform.position, pos) <
                          Vector3.Distance(closestEnemy.position, pos))
                 {
                     closestEnemy = b.transform;
@@ -104,11 +137,12 @@ public class LevelManager : MonoBehaviour {
         {
             foreach (GameObject b in team2)
             {
-                if (closestEnemy == null)
+                if (closestEnemy == null && b.activeInHierarchy)
                 {
                     closestEnemy = b.transform;
                 }
-                else if (Vector3.Distance(b.transform.position, pos) <
+                else if (b.activeInHierarchy &&
+                         Vector3.Distance(b.transform.position, pos) <
                          Vector3.Distance(closestEnemy.position, pos))
                 {
                     closestEnemy = b.transform;
