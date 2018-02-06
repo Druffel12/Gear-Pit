@@ -10,6 +10,5 @@ public class Level1Load : MonoBehaviour
     public void LoadLevel(string Level1)
     {
         SceneManager.LoadScene(Level1);
-        Debug.Log("Hi");
     }
 }
