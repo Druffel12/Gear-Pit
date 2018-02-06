@@ -7,6 +7,7 @@ public class Level1Load : MonoBehaviour
 {
     public GameObject loadingImage;
 
+
     public void LoadLevel(string Level1)
     {
         SceneManager.LoadScene(Level1);
