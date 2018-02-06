@@ -12,6 +12,7 @@ public class Battlebot : MonoBehaviour {
 
     private NavMeshAgent agent;
     private Transform bulletSpawn;
+    private RectTransform healthBar;
 
     private float health;
     private float gunHeat = 0;
@@ -26,6 +27,7 @@ public class Battlebot : MonoBehaviour {
     {
         agent = GetComponent<NavMeshAgent>();
         bulletSpawn = transform.Find("BulletSpawn");
+        healthBar = transform.Find("Canvas").Find("HealthBackground").Find("Health").GetComponent<RectTransform>();
         health = maxHealth;
 
         agent.enabled = true;
@@ -42,6 +44,7 @@ public class Battlebot : MonoBehaviour {
     {
         health -= amt;
         health = Mathf.Clamp(health, 0, maxHealth);
+        healthBar.localScale = new Vector3(health / maxHealth, 1f, 1f);
         if(health <= 0)
         {
             Kill();
