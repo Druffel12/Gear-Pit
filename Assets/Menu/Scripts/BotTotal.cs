@@ -7,7 +7,12 @@ public class BotTotal : MonoBehaviour
 {
     public Text BotTotalCount;
     public int Total;
+    BotValueHolder Values;
 
+    void Start ()
+    {
+        Values = FindObjectOfType<BotValueHolder>();
+    }
     public void UpdateTotal()
     {
         Total++;
