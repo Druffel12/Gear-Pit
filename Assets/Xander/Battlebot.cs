@@ -27,6 +27,8 @@ public class Battlebot : MonoBehaviour {
         agent = GetComponent<NavMeshAgent>();
         bulletSpawn = transform.Find("BulletSpawn");
         health = maxHealth;
+
+        agent.enabled = true;
     }
 
     private void Update()

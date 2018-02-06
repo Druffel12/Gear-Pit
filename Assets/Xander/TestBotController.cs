@@ -11,6 +11,7 @@ public class TestBotController : MonoBehaviour {
 	void Update () {
         bot.Shoot(bullet);
         Vector3 s = Random.onUnitSphere;
+        s += transform.position;
         s.y = transform.position.y;
         bot.LookAt(s);
         bot.MoveTo(transform.position + transform.forward);

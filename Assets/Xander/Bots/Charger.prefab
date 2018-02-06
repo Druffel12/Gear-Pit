@@ -128,8 +128,6 @@ MonoBehaviour:
   maxHealth: 100
   gunCooldown: 1
   bulletDamage: 10
-  agent: {fileID: 195616381304846972}
-  bulletSpawn: {fileID: 4502264599417190}
 --- !u!114 &114766023465265864
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -162,7 +160,7 @@ NavMeshAgent:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1943630792027524}
-  m_Enabled: 1
+  m_Enabled: 0
   m_AgentTypeID: 0
   m_Radius: 0.5
   m_Speed: 3.5
