@@ -141,6 +141,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bot: {fileID: 114011223344740404}
   bullet: {fileID: 1711347432612356, guid: cf03f21d5dca8fd4fa63e6e8a32d717e, type: 2}
+  useHivemind: 0
 --- !u!136 &136904229965215680
 CapsuleCollider:
   m_ObjectHideFlags: 1

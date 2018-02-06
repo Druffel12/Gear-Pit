@@ -11,6 +11,7 @@ public class StraferController : MonoBehaviour {
 
     public float strafeDist = 4f;
     public float fleeDist = 2f;
+    public bool useHivemind = false;
 
     private LevelManager manager;
 
@@ -22,6 +23,9 @@ public class StraferController : MonoBehaviour {
 
     private void Start()
     {
+        strafeDist += Random.Range(-2.0f, 2.0f);
+        strafeTimeBase += Random.Range(-1.0f, 5.0f);
+
         strafeTimer = strafeTimeBase;
         manager = GameObject.FindObjectOfType<LevelManager>();
 
@@ -32,6 +36,11 @@ public class StraferController : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
+        if (useHivemind)
+        {
+            target = StraferHivemind.target;
+        }
+
         if (target == null)
         {
             // 3-2=1 3-1=2
@@ -97,6 +106,16 @@ public class StraferController : MonoBehaviour {
                 }
             }
         }
+
+        if (useHivemind)
+        {
+            StraferHivemind.target = target;
+        }
     }
 
+}
+
+public static class StraferHivemind
+{
+    public static Transform target = null;
 }

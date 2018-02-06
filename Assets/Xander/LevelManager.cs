@@ -48,8 +48,8 @@ public class LevelManager : MonoBehaviour {
         }
         else
         {
-            team1 = new GameObject[5];
-            team2 = new GameObject[5];
+            team1 = new GameObject[15];
+            team2 = new GameObject[15];
             for (int i = 0; i < team2.Length; ++i)
             {
                 GameObject bot = Instantiate(testBot);
