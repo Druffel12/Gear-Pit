@@ -126,7 +126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bot: {fileID: 114929863990068738}
   bullet: {fileID: 1711347432612356, guid: cf03f21d5dca8fd4fa63e6e8a32d717e, type: 2}
-  strafeDist: 4
+  strafeDist: 10
 --- !u!114 &114929863990068738
 MonoBehaviour:
   m_ObjectHideFlags: 1

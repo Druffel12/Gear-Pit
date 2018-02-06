@@ -299,6 +299,23 @@ Prefab:
       propertyPath: m_LocalPosition.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 114747425287787342, guid: c322b372e3bd6104baa5c3b0f645392f,
+        type: 2}
+      propertyPath: testSpawn
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114747425287787342, guid: c322b372e3bd6104baa5c3b0f645392f,
+        type: 2}
+      propertyPath: testBot
+      value: 
+      objectReference: {fileID: 1619949478633652, guid: 51e33dcc5e23c034ba1fa30bcf5f2d92,
+        type: 2}
+    - target: {fileID: 114747425287787342, guid: c322b372e3bd6104baa5c3b0f645392f,
+        type: 2}
+      propertyPath: testBot2
+      value: 
+      objectReference: {fileID: 1943630792027524, guid: 4d70cac20eb22e4489afd726d533f1ec,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c322b372e3bd6104baa5c3b0f645392f, type: 2}
   m_IsPrefabParent: 0
@@ -621,7 +638,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 406985165}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 3, z: -50}
+  m_LocalPosition: {x: 0, y: 2.5, z: -50}
   m_LocalScale: {x: 100, y: 6, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -867,7 +884,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 493429635}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 50, y: 3, z: 0}
+  m_LocalPosition: {x: 50, y: 2.5, z: 0}
   m_LocalScale: {x: 1, y: 6, z: 100}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1277,7 +1294,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 787456010}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -50, y: 3, z: 0}
+  m_LocalPosition: {x: -50, y: 2.5, z: 0}
   m_LocalScale: {x: 1, y: 6, z: 100}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2073,7 +2090,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1095616830}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 3, z: 50}
+  m_LocalPosition: {x: 0, y: 2.5, z: 50}
   m_LocalScale: {x: 100, y: 6, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

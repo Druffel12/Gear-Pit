@@ -10,9 +10,17 @@ public class ChargerController : MonoBehaviour {
     private Transform target = null;
     private LevelManager manager;
 
+    private float reTargTimer;
+    private float reTargTimerBase = 1f;
+
+
+
     private void Start()
     {
         manager = GameObject.FindObjectOfType<LevelManager>();
+
+        reTargTimerBase += Random.Range(-0.25f, 0.5f);
+        reTargTimer = reTargTimerBase;
     }
 
     // Update is called once per frame
@@ -31,13 +39,30 @@ public class ChargerController : MonoBehaviour {
 
         if (target != null)
         {
+            reTargTimer -= Time.deltaTime;
+            if (reTargTimer <= 0)
+            {
+                target = manager.FindClosestBotTo(transform.position, 3 - bot.team);
+                reTargTimer = reTargTimerBase;
+            }
+
             Vector3 lookat = target.position;
             //lookat.y = transform.position.y;
             transform.LookAt(lookat);
 
             bot.MoveTo(target.position);
 
-            bot.Shoot(bullet);
+            RaycastHit hit;
+            if(Physics.Raycast(transform.position, transform.forward, out hit))
+            {
+                Battlebot trgbot = hit.transform.GetComponent<Battlebot>();
+                if(trgbot != null && trgbot.team != bot.team)
+                {
+                    bot.Shoot(bullet);
+                }
+            }
+
+            //bot.Shoot(bullet);
         }
     }
 
