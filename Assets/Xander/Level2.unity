@@ -302,19 +302,19 @@ Prefab:
     - target: {fileID: 114747425287787342, guid: c322b372e3bd6104baa5c3b0f645392f,
         type: 2}
       propertyPath: testSpawn
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114747425287787342, guid: c322b372e3bd6104baa5c3b0f645392f,
         type: 2}
       propertyPath: testBot
       value: 
-      objectReference: {fileID: 1619949478633652, guid: 51e33dcc5e23c034ba1fa30bcf5f2d92,
+      objectReference: {fileID: 1943630792027524, guid: 4d70cac20eb22e4489afd726d533f1ec,
         type: 2}
     - target: {fileID: 114747425287787342, guid: c322b372e3bd6104baa5c3b0f645392f,
         type: 2}
       propertyPath: testBot2
       value: 
-      objectReference: {fileID: 1943630792027524, guid: 4d70cac20eb22e4489afd726d533f1ec,
+      objectReference: {fileID: 1619949478633652, guid: 51e33dcc5e23c034ba1fa30bcf5f2d92,
         type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c322b372e3bd6104baa5c3b0f645392f, type: 2}
