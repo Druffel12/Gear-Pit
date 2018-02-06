@@ -47,7 +47,7 @@ public class LevelManager : MonoBehaviour {
         bool team2alive = false;
         foreach(GameObject o in team1)
         {
-            if(o.activeSelf)
+            if(o.activeInHierarchy)
             {
                 team1alive = true;
                 break;
@@ -55,17 +55,18 @@ public class LevelManager : MonoBehaviour {
         }
         foreach (GameObject o in team2)
         {
-            if (o.activeSelf)
+            if (o.activeInHierarchy)
             {
                 team2alive = true;
                 break;
             }
         }
-
+        
         //change to game over screen eventually
         if(!team1alive || !team2alive)
         {
-            AsyncSceneLoader("MainMenu");
+            StartCoroutine(AsyncSceneLoader("MainMenu"));
+            Cursor.lockState = CursorLockMode.None;
         }
     }
 
