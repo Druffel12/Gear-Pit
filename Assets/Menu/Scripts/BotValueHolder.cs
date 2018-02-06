@@ -24,7 +24,7 @@ public class BotValueHolder : MonoBehaviour {
 
         StaticBotList.team1 = new GameObject[Bot11 + Bot12 + Bot13 + Bot14];
         StaticBotList.team2 = new GameObject[Bot21 + Bot22 + Bot23 + Bot24];
-
+        Debug.Log(StaticBotList.team1.Length);
         int i = 0;
         for (i = i; i < Bot11; ++i)
         {
