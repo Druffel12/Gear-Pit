@@ -7,6 +7,8 @@ public class ChargerController : MonoBehaviour {
     public Battlebot bot;
     public GameObject bullet;
 
+    public bool useHivemind = false;
+
     private Transform target = null;
     private LevelManager manager;
 
@@ -26,6 +28,11 @@ public class ChargerController : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
+        if(useHivemind)
+        {
+            target = ChargerHivemind.target;
+        }
+
         if(target == null)
         {
             // 3-2=1 3-1=2
@@ -64,6 +71,16 @@ public class ChargerController : MonoBehaviour {
 
             //bot.Shoot(bullet);
         }
+
+        if(useHivemind)
+        {
+            ChargerHivemind.target = target;
+        }
     }
 
+}
+
+public static class ChargerHivemind
+{
+    public static Transform target = null;
 }
