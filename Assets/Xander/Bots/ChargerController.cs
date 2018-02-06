@@ -32,7 +32,7 @@ public class ChargerController : MonoBehaviour {
         if (target != null)
         {
             Vector3 lookat = target.position;
-            lookat.y = transform.position.y;
+            //lookat.y = transform.position.y;
             transform.LookAt(lookat);
 
             bot.MoveTo(target.position);

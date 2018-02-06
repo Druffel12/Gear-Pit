@@ -53,6 +53,11 @@ public class Battlebot : MonoBehaviour {
         return health;
     }
 
+    public NavMeshAgent GetAgent()
+    {
+        return agent;
+    }
+
     public void MoveTo(Vector3 pos)
     {
         agent.SetDestination(pos);
