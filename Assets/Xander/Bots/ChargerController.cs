@@ -9,7 +9,7 @@ public class ChargerController : MonoBehaviour {
 
     public bool useHivemind = false;
 
-    private Transform target = null;
+    private Transform target = null; 
     private LevelManager manager;
 
     private float reTargTimer;
