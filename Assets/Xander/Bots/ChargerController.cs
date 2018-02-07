@@ -59,18 +59,20 @@ public class ChargerController : MonoBehaviour {
 
             bot.MoveTo(target.position);
 
-            RaycastHit hit;
-            if(Physics.Raycast(transform.position, transform.forward, out hit))
-            {
-                Battlebot trgbot = hit.transform.GetComponent<Battlebot>();
-                if(trgbot != null && trgbot.team != bot.team)
-                {
-                    bot.Shoot(bullet);
-                }
-            }
+            //RaycastHit hit;
+            //if(Physics.Raycast(transform.position, transform.forward, out hit))
+            //{
+            //    Battlebot trgbot = hit.transform.GetComponent<Battlebot>();
+            //    if(trgbot != null && trgbot.team != bot.team)
+            //    {
+            //        bot.Shoot(bullet);
+            //    }
+            //}
 
             //bot.Shoot(bullet);
         }
+
+        bot.Swing();
 
         if(useHivemind)
         {
