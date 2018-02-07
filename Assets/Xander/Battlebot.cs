@@ -15,6 +15,7 @@ public class Battlebot : MonoBehaviour {
     private Transform bulletSpawn;
     private RectTransform healthBar;
     private GameObject teamIcon;
+    private MeleeWeapon weapon;
 
     private float health;
     private float gunHeat = 0;
@@ -31,6 +32,7 @@ public class Battlebot : MonoBehaviour {
         bulletSpawn = transform.Find("BulletSpawn");
         healthBar = transform.Find("Canvas").Find("HealthBackground").Find("Health").GetComponent<RectTransform>();
         teamIcon = transform.Find("Canvas").Find("TeamIcons").gameObject;
+        weapon = GetComponentInChildren<MeleeWeapon>();
         health = maxHealth;
 
         if(team == 1)
@@ -96,6 +98,14 @@ public class Battlebot : MonoBehaviour {
             b.GetComponent<Rigidbody>().AddForce(b.transform.forward * bulletForce);
             //will make longer eventually, here in case bullet escapes map
             Destroy(b, 10);
+        }
+    }
+
+    public void Swing()
+    {
+        if(weapon != null)
+        {
+            weapon.Swing();
         }
     }
 
