@@ -25,6 +25,7 @@ public class LevelManager : MonoBehaviour {
         {
             team1 = new GameObject[StaticBotList.team1.Length];
             team2 = new GameObject[StaticBotList.team2.Length];
+            
             for (int i = 0; i < team1.Length; ++i)
             {
                 GameObject bot = Instantiate(StaticBotList.team1[i]);

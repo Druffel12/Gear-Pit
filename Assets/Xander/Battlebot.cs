@@ -20,7 +20,7 @@ public class Battlebot : MonoBehaviour {
     private float gunHeat = 0;
 
     //might make this public for adjustable bullet speed
-    private float bulletForce = 5000.0f;
+    private float bulletForce = 3000.0f;
 
 
 
@@ -40,12 +40,6 @@ public class Battlebot : MonoBehaviour {
         else
         {
             teamIcon.GetComponent<Image>().color = Color.red;
-        }
-
-        int i = 0;
-        for(i = i; i < 5; ++i)
-        {
-
         }
 
         agent.enabled = true;

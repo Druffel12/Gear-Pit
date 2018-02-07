@@ -304,8 +304,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   team: 1
   maxHealth: 100
-  gunCooldown: 1
-  bulletDamage: 10
+  gunCooldown: 0.25
+  bulletDamage: 2
 --- !u!114 &114940766997055212
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -355,7 +355,7 @@ NavMeshAgent:
   m_Enabled: 0
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 2
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
