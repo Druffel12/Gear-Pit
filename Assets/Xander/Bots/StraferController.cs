@@ -16,17 +16,19 @@ public class StraferController : MonoBehaviour {
     private LevelManager manager;
 
     private float strafeDir = 1f;
-    private float strafeTimer;
-    private float strafeTimeBase = 3f;
     private float reTargTimer;
     private float reTargTimerBase = 1f;
 
     private void Start()
     {
         strafeDist += Random.Range(-2.0f, 2.0f);
-        strafeTimeBase += Random.Range(-1.0f, 5.0f);
 
-        strafeTimer = strafeTimeBase;
+        int roll = Random.Range(0, 2);
+        if(roll == 0)
+        {
+            strafeDir = -1f;
+        }
+        
         manager = GameObject.FindObjectOfType<LevelManager>();
 
         reTargTimerBase += Random.Range(-0.25f, 0.5f);
@@ -80,12 +82,6 @@ public class StraferController : MonoBehaviour {
             }
             else
             {
-                strafeTimer -= Time.deltaTime;
-                if(strafeTimer <= 0)
-                {
-                    strafeTimer = strafeTimeBase;
-                    strafeDir *= -1f;
-                }
 
                 Vector3 lookat = target.position;
                 //lookat.y = transform.position.y;
