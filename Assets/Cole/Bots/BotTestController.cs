@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BotTestController : MonoBehaviour {
-
+public class BotTestController : MonoBehaviour
+{
+    private Transform target = null;
     public GameObject Bullet;
     public Battlebot BotTest;
+  //  public BotController Controller;
 
     // Use this for initialization
     void Start ()
@@ -18,7 +20,13 @@ public class BotTestController : MonoBehaviour {
 	void Update ()
     {
         BotTest.Shoot(Bullet);
-        BotTest.MoveTo(transform.position + transform.forward);
-        BotTest.LookAt(transform.gameObject)
-	}
+        Vector3 lookat = target.position;
+        BotTest.MoveTo(transform.position + target.position);
+
+
+        if (target == null)
+        {
+         //   target =Controller.FindClosestBotTo(transform.position, 3 - bot.team);
+        }
+    }
 }
