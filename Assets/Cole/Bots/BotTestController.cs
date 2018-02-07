@@ -19,5 +19,6 @@ public class BotTestController : MonoBehaviour {
     {
         BotTest.Shoot(Bullet);
         BotTest.MoveTo(transform.position + transform.forward);
+        BotTest.LookAt(transform.gameObject)
 	}
 }
