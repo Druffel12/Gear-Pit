@@ -12,6 +12,8 @@ public class MeleeWeapon : MonoBehaviour {
     public Vector3 swingRot = Vector3.right;
     public float swingAnglePerSec = 1.0f;
     
+    public ParticleSystem hitParticles = null;
+    
     private float swingTime = 0;
     private bool swinging = false;
     private Battlebot mybot;
@@ -68,8 +70,12 @@ public class MeleeWeapon : MonoBehaviour {
         if (swinging && bot && bot.team != mybot.team)
         {
             bot.Damage(damage);
+            if(hitParticles)
+            {
+                hitParticles.Play();
+            }
+            swinging = false;
         }
-        swinging = false;
     }
 
 }
