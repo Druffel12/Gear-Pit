@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ChargerController : MonoBehaviour {
 
+    public float attackDist = 3.0f;
+
     public Battlebot bot;
     public GameObject bullet;
 
@@ -59,18 +61,24 @@ public class ChargerController : MonoBehaviour {
 
             bot.MoveTo(target.position);
 
-            RaycastHit hit;
-            if(Physics.Raycast(transform.position, transform.forward, out hit))
-            {
-                Battlebot trgbot = hit.transform.GetComponent<Battlebot>();
-                if(trgbot != null && trgbot.team != bot.team)
-                {
-                    bot.Shoot(bullet);
-                }
-            }
+            //RaycastHit hit;
+            //if(Physics.Raycast(transform.position, transform.forward, out hit))
+            //{
+            //    Battlebot trgbot = hit.transform.GetComponent<Battlebot>();
+            //    if(trgbot != null && trgbot.team != bot.team)
+            //    {
+            //        bot.Shoot(bullet);
+            //    }
+            //}
 
             //bot.Shoot(bullet);
+            if (Vector3.Distance(transform.position, target.position) < attackDist)
+            {
+                bot.Swing();
+            }
         }
+
+
 
         if(useHivemind)
         {
