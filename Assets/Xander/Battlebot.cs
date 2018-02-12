@@ -18,6 +18,7 @@ public class Battlebot : MonoBehaviour {
     private RectTransform healthBar;
     private GameObject teamIcon;
     private MeleeWeapon weapon;
+    private GameObject mySplode;
 
     private float health;
     private float gunHeat = 0;
@@ -37,7 +38,10 @@ public class Battlebot : MonoBehaviour {
         weapon = GetComponentInChildren<MeleeWeapon>();
         health = maxHealth;
 
-        if(team == 1)
+        mySplode = Instantiate(explosion);
+        mySplode.GetComponent<Explode>().mat = GetComponent<MeshRenderer>().material;
+
+        if (team == 1)
         {
             teamIcon.GetComponent<Image>().color = Color.blue;
         }
@@ -118,10 +122,10 @@ public class Battlebot : MonoBehaviour {
         //Destroy(gameObject);
         if(explosion)
         {
-            GameObject e = Instantiate(explosion);
-            e.transform.position = transform.position;
-            e.GetComponent<Explode>().mat = GetComponent<MeshRenderer>().material;
-            Destroy(e, 2);
+            //GameObject e = Instantiate(explosion);
+            mySplode.transform.position = transform.position;
+            mySplode.SetActive(true);
+            //Destroy(e, 2);
         }
         gameObject.SetActive(false);
     }
