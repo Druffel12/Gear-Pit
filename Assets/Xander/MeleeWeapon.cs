@@ -74,8 +74,8 @@ public class MeleeWeapon : MonoBehaviour {
             {
                 hitParticles.Play();
             }
+            swinging = false;
         }
-        swinging = false;
     }
 
 }
