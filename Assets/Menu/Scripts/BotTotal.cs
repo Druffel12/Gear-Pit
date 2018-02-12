@@ -8,7 +8,7 @@ public class BotTotal : MonoBehaviour
     public Text BotTotalCount;
     public int Total;
     BotValueHolder Values;
-
+    public Button dummy;
     void Start ()
     {
         Values = FindObjectOfType<BotValueHolder>();
@@ -17,7 +17,8 @@ public class BotTotal : MonoBehaviour
     {
         Total++;
         BotTotalCount.text = Total.ToString();
-        
+        dummy.Select();
     }
+ 
 
 }
