@@ -302,6 +302,7 @@ MonoBehaviour:
   maxHealth: 100
   gunCooldown: 0
   bulletDamage: 10
+  explosion: {fileID: 1155047596922636, guid: 46de6787a3f908c4196d5cf937ef3937, type: 2}
 --- !u!114 &114821455514816606
 MonoBehaviour:
   m_ObjectHideFlags: 1

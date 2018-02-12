@@ -11,6 +11,8 @@ public class Battlebot : MonoBehaviour {
     public float gunCooldown = 0.25f;
     public float bulletDamage = 10.0f;
 
+    public GameObject explosion = null;
+
     private NavMeshAgent agent;
     private Transform bulletSpawn;
     private RectTransform healthBar;
@@ -114,6 +116,13 @@ public class Battlebot : MonoBehaviour {
     private void Kill()
     {
         //Destroy(gameObject);
+        if(explosion)
+        {
+            GameObject e = Instantiate(explosion);
+            e.transform.position = transform.position;
+            e.GetComponent<Explode>().mat = GetComponent<MeshRenderer>().material;
+            Destroy(e, 2);
+        }
         gameObject.SetActive(false);
     }
 
