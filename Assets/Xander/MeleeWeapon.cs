@@ -10,36 +10,33 @@ public class MeleeWeapon : MonoBehaviour {
     public float swingLength = 0.5f;
     public Vector3 swingDir;
     public Vector3 swingRot = Vector3.right;
-    public Vector3 swingRotPoint = Vector3.zero;
     public float swingAnglePerSec = 1.0f;
-
-    private float swingHeat = 0;
+    
     private float swingTime = 0;
     private bool swinging = false;
+    private Battlebot mybot;
 
     private Vector3 relpos = Vector3.zero;
 
-
+    private int starts = 0;
+    private int ends = 0;
 
     private void Start()
     {
         relpos = transform.localPosition; //transform.position - transform.parent.position;
+        mybot = transform.parent.GetComponent<Battlebot>();
     }
 
     private void Update()
     {
-
-        swingHeat = Mathf.Clamp(swingHeat - Time.deltaTime, 0f, swingCooldown);
-
+        
         if(swinging)
         {
             swingTime += Time.deltaTime;
 
-            relpos += transform.TransformDirection(swingDir) * Time.deltaTime;
-
-            Vector3 initpos = transform.position;
-            transform.parent.Rotate(swingDir * Time.deltaTime);
-            relpos += transform.position - initpos;
+            transform.position += transform.TransformDirection(swingDir) * Time.deltaTime;
+            
+            transform.Rotate(swingRot * swingAnglePerSec * Time.deltaTime);
 
             if(swingTime >= swingLength)
             {
@@ -48,32 +45,27 @@ public class MeleeWeapon : MonoBehaviour {
         }
         else if(!swinging && swingTime > 0)
         {
-            swingTime = Mathf.Clamp(swingTime - Time.deltaTime, 0f, swingLength);
+            swingTime -= Time.deltaTime;
 
-            relpos -= transform.TransformDirection(swingDir) * Time.deltaTime;
-
-            Vector3 initpos = transform.position;
-            transform.parent.Rotate(swingDir * Time.deltaTime);
-            relpos += transform.position - initpos;
+            transform.position -= transform.TransformDirection(swingDir) * Time.deltaTime;
+            
+            transform.Rotate(-swingRot * swingAnglePerSec * Time.deltaTime);
         }
-
-        Debug.DrawLine(transform.parent.TransformPoint(relpos), transform.parent.TransformPoint(swingRotPoint));
-        transform.position = transform.parent.TransformPoint(relpos);
+        
     }
 
     public void Swing()
     {
-        if(swingHeat == 0 && swingTime == 0)
+        if(swingTime <= 0)
         {
-            swingHeat = swingCooldown;
             swinging = true;
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    public void ChildTriggerEnter(Collider other)
     {
         Battlebot bot = other.GetComponent<Battlebot>();
-        if(swinging && bot)
+        if (swinging && bot && bot.team != mybot.team)
         {
             bot.Damage(damage);
         }
