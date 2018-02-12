@@ -32,6 +32,8 @@ public class BotTestController : MonoBehaviour
             Vector3 lookat = enemy.position;
             transform.LookAt(lookat);
             BotTest.MoveTo(transform.position + enemy.position);
+
+            //if(Vector3.Distance(transform.position, enemy.position))
         }
     }
 }
