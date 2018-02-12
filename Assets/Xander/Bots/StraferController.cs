@@ -8,10 +8,14 @@ public class StraferController : MonoBehaviour {
     public GameObject bullet;
 
     public Transform target = null;
+    private bool targIsMelee = false;
 
-    public float strafeDist = 4f;
-    public float fleeDist = 2f;
+    public float baseStrafeDist = 4f;
+    public float baseFleeDist = 2f;
+    public float meleeDistMod = 5f;
     public bool useHivemind = false;
+    private float strafeDist = 0;
+    private float fleeDist = 0;
 
     private LevelManager manager;
 
@@ -21,7 +25,7 @@ public class StraferController : MonoBehaviour {
 
     private void Start()
     {
-        strafeDist += Random.Range(-2.0f, 2.0f);
+        baseStrafeDist += Random.Range(-2.0f, 2.0f);
 
         int roll = Random.Range(0, 2);
         if(roll == 0)
@@ -41,12 +45,13 @@ public class StraferController : MonoBehaviour {
         if (useHivemind)
         {
             target = StraferHivemind.target;
+            targIsMelee = StraferHivemind.targetIsMelee;
+            SetDistances();
         }
 
         if (target == null)
         {
-            // 3-2=1 3-1=2
-            target = manager.FindClosestBotTo(transform.position, 3 - bot.team);
+            FindTarget();
         }
 
         if (target != null && !target.gameObject.activeInHierarchy)
@@ -59,14 +64,13 @@ public class StraferController : MonoBehaviour {
             reTargTimer -= Time.deltaTime;
             if(reTargTimer <= 0)
             {
-                target = manager.FindClosestBotTo(transform.position, 3 - bot.team);
+                FindTarget();
                 reTargTimer = reTargTimerBase;
             }
 
             if (Vector3.Distance(transform.position, target.position) > strafeDist)
             {
                 Vector3 lookat = target.position;
-                //lookat.y = transform.position.y;
                 transform.LookAt(lookat);
 
                 bot.MoveTo(target.position);
@@ -74,7 +78,6 @@ public class StraferController : MonoBehaviour {
             else if (Vector3.Distance(transform.position, target.position) < fleeDist)
             {
                 Vector3 lookat = target.position;
-                //lookat.y = transform.position.y;
                 transform.LookAt(lookat);
 
                 Vector3 moveVec = transform.position -transform.forward;
@@ -84,11 +87,9 @@ public class StraferController : MonoBehaviour {
             {
 
                 Vector3 lookat = target.position;
-                //lookat.y = transform.position.y;
                 transform.LookAt(lookat);
 
                 Vector3 movePos = transform.position + transform.right * strafeDir;
-                //movePos += transform.forward;
                 bot.MoveTo(movePos);
             }
 
@@ -109,9 +110,35 @@ public class StraferController : MonoBehaviour {
         }
     }
 
+    private void FindTarget()
+    {
+        // 3-2=1 3-1=2
+        target = manager.FindClosestBotTo(transform.position, 3 - bot.team);
+        if (target && target.GetComponentInChildren<MeleeWeapon>())
+        {
+            targIsMelee = true;
+        }
+        SetDistances();
+    }
+
+    private void SetDistances()
+    {
+        if(targIsMelee)
+        {
+            strafeDist = baseStrafeDist + meleeDistMod;
+            fleeDist = baseFleeDist + meleeDistMod;
+        }
+        else
+        {
+            strafeDist = baseStrafeDist;
+            fleeDist = baseFleeDist;
+        }
+    }
+
 }
 
 public static class StraferHivemind
 {
     public static Transform target = null;
+    public static bool targetIsMelee = false;
 }
