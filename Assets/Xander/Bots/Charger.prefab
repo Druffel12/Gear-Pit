@@ -468,7 +468,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a708c4abacf10948b660d3408432d1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 34
+  damage: 7
   swingCooldown: 0.5
   swingLength: 0.5
   swingDir: {x: 0, y: 0, z: 0}
@@ -649,7 +649,7 @@ ParticleSystem:
   simulationSpeed: 1
   looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
