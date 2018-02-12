@@ -548,6 +548,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackDist: 5
+  wobblePosDist: 5
   bot: {fileID: 114011223344740404}
   bullet: {fileID: 1711347432612356, guid: cf03f21d5dca8fd4fa63e6e8a32d717e, type: 2}
   useHivemind: 0
