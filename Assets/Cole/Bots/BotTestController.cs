@@ -33,7 +33,7 @@ public class BotTestController : MonoBehaviour
             transform.LookAt(lookat);
             BotTest.MoveTo(transform.position + enemy.position);
 
-           // if(Vector3.Distance)
+            //if(Vector3.Distance(transform.position, enemy.position))
         }
     }
 }
