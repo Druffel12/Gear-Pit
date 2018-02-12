@@ -21,6 +21,12 @@ public class Explode : MonoBehaviour {
             b.AddTorque(Random.insideUnitSphere * splodeForce);
             b.GetComponent<MeshRenderer>().material = mat;
         }
+        Invoke("Deactivate", 2);
 	}
+
+    private void Deactivate()
+    {
+        gameObject.SetActive(false);
+    }
 	
 }

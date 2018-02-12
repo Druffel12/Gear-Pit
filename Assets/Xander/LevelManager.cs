@@ -98,9 +98,14 @@ public class LevelManager : MonoBehaviour {
         //change to game over screen eventually
         if(!team1alive || !team2alive)
         {
-            StartCoroutine(AsyncSceneLoader("MainMenu"));
+            Invoke("LoadFromInvoke", 3f);
             Cursor.lockState = CursorLockMode.None;
         }
+    }
+
+    private void LoadFromInvoke()
+    {
+        StartCoroutine(AsyncSceneLoader("MainMenu"));
     }
 
     private IEnumerator AsyncSceneLoader(string scene)
