@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ChargerController : MonoBehaviour {
 
+    public float attackDist = 3.0f;
+
     public Battlebot bot;
     public GameObject bullet;
 
@@ -70,9 +72,13 @@ public class ChargerController : MonoBehaviour {
             //}
 
             //bot.Shoot(bullet);
+            if (Vector3.Distance(transform.position, target.position) < attackDist)
+            {
+                bot.Swing();
+            }
         }
 
-        bot.Swing();
+
 
         if(useHivemind)
         {
