@@ -5,14 +5,10 @@ Font:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: font1
+  m_Name: TestFont
   serializedVersion: 5
   m_LineSpacing: 80
-<<<<<<< HEAD
-  m_DefaultMaterial: {fileID: 21573125113866126}
-=======
-  m_DefaultMaterial: {fileID: 21248225170848574}
->>>>>>> Dev
+  m_DefaultMaterial: {fileID: 21858727968323146}
   m_FontSize: 72
   m_Texture: {fileID: 0}
   m_AsciiStartOffset: 0
@@ -1233,11 +1229,7 @@ Font:
   m_FontNames: []
   m_FallbackFonts: []
   m_FontRenderingMode: 0
-<<<<<<< HEAD
---- !u!21 &21573125113866126
-=======
---- !u!21 &21248225170848574
->>>>>>> Dev
+--- !u!21 &21858727968323146
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
