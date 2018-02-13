@@ -19,6 +19,8 @@ public class LevelManager : MonoBehaviour {
     private GameObject[] team1;
     private GameObject[] team2;
 
+    private bool loadingScene = false;
+
     private void Start()
     {
         StraferHivemindList.minds[0] = new StraferHivemind();
@@ -110,10 +112,10 @@ public class LevelManager : MonoBehaviour {
         }
         
         //change to game over screen eventually
-        if(!team1alive || !team2alive)
+        if(!loadingScene && (!team1alive || !team2alive))
         {
+            loadingScene = true;
             Invoke("LoadFromInvoke", 3f);
-            Cursor.lockState = CursorLockMode.None;
         }
     }
 
@@ -124,9 +126,9 @@ public class LevelManager : MonoBehaviour {
 
     private IEnumerator AsyncSceneLoader(string scene)
     {
-        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(scene);
-
-        while(!asyncLoad.isDone)
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(scene, LoadSceneMode.Single);
+        
+        while (!asyncLoad.isDone)
         {
             yield return null;
         }
