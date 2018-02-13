@@ -4175,8 +4175,8 @@ MonoBehaviour:
   Bot24: 0
   BotType1: {fileID: 1619949478633652, guid: 51e33dcc5e23c034ba1fa30bcf5f2d92, type: 2}
   BotType2: {fileID: 1943630792027524, guid: 4d70cac20eb22e4489afd726d533f1ec, type: 2}
-  BotType3: {fileID: 1206443883924582, guid: be510b6ff33ae09448097790f5081ca1, type: 2}
-  BotType4: {fileID: 1361877228334028, guid: aa3c96f537fedef42bae4d87c330475b, type: 2}
+  BotType3: {fileID: 1809772913143026, guid: 3842b2d175005da43978c074bcc22c79, type: 2}
+  BotType4: {fileID: 1771575684787622, guid: 69b65b8e9cbe7704fa62a6f235b3be4a, type: 2}
 --- !u!4 &1830969619
 Transform:
   m_ObjectHideFlags: 0
