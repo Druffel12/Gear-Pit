@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 195151461549862682}
   - component: {fileID: 114476758954285088}
   m_Layer: 0
-  m_Name: BotTest 1
+  m_Name: Sniper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
