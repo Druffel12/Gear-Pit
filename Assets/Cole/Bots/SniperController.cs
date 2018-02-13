@@ -54,7 +54,16 @@ public class SniperController : MonoBehaviour
             {
                 bot.MoveTo(transform.position - moveDir);
             }
-            Debug.DrawLine(transform.position, transform.position + (moveDir * 10));
+            // Debug.DrawLine(transform.position, transform.position + (moveDir * 10));
+            RaycastHit hit;
+            if (Physics.Raycast(transform.position, transform.forward, out hit))
+            {
+                Battlebot trgbot = hit.transform.GetComponent<Battlebot>();
+                if (trgbot != null && trgbot.team != bot.team)
+                {
+                    bot.Shoot(Bullet);
+                }
+            }
         }
     }
 }
