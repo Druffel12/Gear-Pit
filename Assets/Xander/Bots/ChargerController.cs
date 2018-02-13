@@ -49,7 +49,7 @@ public class ChargerController : MonoBehaviour {
         if(target == null)
         {
             // 3-2=1 3-1=2
-            if(medicHunter)
+            if (medicHunter)
             {
                 target = manager.FindClosestBotTo(transform.position, 3 - bot.team, "Medic(Clone)");
             }
