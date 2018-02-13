@@ -12,6 +12,8 @@ public class Battlebot : MonoBehaviour {
     public float bulletDamage = 10.0f;
 
     public GameObject explosion = null;
+    
+    public AudioClip[] gunSounds;
 
     private NavMeshAgent agent;
     private Transform bulletSpawn;
@@ -19,6 +21,7 @@ public class Battlebot : MonoBehaviour {
     private GameObject teamIcon;
     private MeleeWeapon weapon;
     private GameObject mySplode;
+    private AudioSource shootAudio;
 
     private float health;
     private float gunHeat = 0;
@@ -36,6 +39,7 @@ public class Battlebot : MonoBehaviour {
         healthBar = transform.Find("Canvas").Find("HealthBackground").Find("Health").GetComponent<RectTransform>();
         teamIcon = transform.Find("Canvas").Find("TeamIcons").gameObject;
         weapon = GetComponentInChildren<MeleeWeapon>();
+        shootAudio = GetComponent<AudioSource>();
         health = maxHealth;
 
         mySplode = Instantiate(explosion);
@@ -103,6 +107,11 @@ public class Battlebot : MonoBehaviour {
             bscript.damage = bulletDamage;
             b.GetComponent<Rigidbody>().AddForce(b.transform.forward * bulletForce);
             //will make longer eventually, here in case bullet escapes map
+            if(gunSounds.Length > 0)
+            {
+                shootAudio.clip = gunSounds[Random.Range(0, gunSounds.Length)];
+                shootAudio.Play();
+            }
             Destroy(b, 10);
         }
     }

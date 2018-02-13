@@ -17,6 +17,7 @@ public class MeleeWeapon : MonoBehaviour {
     private float swingTime = 0;
     private bool swinging = false;
     private Battlebot mybot;
+    private AudioSource hitAudio;
 
     private Vector3 relpos = Vector3.zero;
 
@@ -27,6 +28,7 @@ public class MeleeWeapon : MonoBehaviour {
     {
         relpos = transform.localPosition; //transform.position - transform.parent.position;
         mybot = transform.parent.GetComponent<Battlebot>();
+        hitAudio = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -73,6 +75,10 @@ public class MeleeWeapon : MonoBehaviour {
             if(hitParticles)
             {
                 hitParticles.Play();
+            }
+            if(hitAudio)
+            {
+                hitAudio.Play();
             }
             swinging = false;
         }
