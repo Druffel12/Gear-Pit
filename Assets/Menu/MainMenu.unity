@@ -228,7 +228,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Bot 3
+  m_Text: Sniper
 --- !u!222 &62195252
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -602,7 +602,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Bot 4
+  m_Text: Medic
 --- !u!222 &321957713
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1764,7 +1764,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Bot 1
+  m_Text: Swarmshot
 --- !u!222 &868193409
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1992,7 +1992,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &992726855
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2519,7 +2519,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Bot 2
+  m_Text: Chainsaw
 --- !u!222 &1080758977
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3600,7 +3600,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Bot 3
+  m_Text: Sniper
 --- !u!222 &1728630084
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3674,7 +3674,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Bot 2
+  m_Text: Chainsaw
 --- !u!222 &1758471457
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4517,7 +4517,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Bot 1
+  m_Text: Swarmshot
 --- !u!222 &1924068397
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4618,7 +4618,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1958061746
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5016,7 +5016,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Bot 4
+  m_Text: Medic
 --- !u!222 &2001851335
 CanvasRenderer:
   m_ObjectHideFlags: 0
