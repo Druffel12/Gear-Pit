@@ -274,13 +274,13 @@ Prefab:
     - target: {fileID: 114747425287787342, guid: c322b372e3bd6104baa5c3b0f645392f,
         type: 2}
       propertyPath: testSpawn
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 82478361063886772, guid: c322b372e3bd6104baa5c3b0f645392f,
         type: 2}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: 2b6f691ad38ac0040afbd730caf56d51, type: 3}
+      objectReference: {fileID: 8300000, guid: 74b6a554a34143f4eaca4dcd97ce47ab, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c322b372e3bd6104baa5c3b0f645392f, type: 2}
   m_IsPrefabParent: 0
