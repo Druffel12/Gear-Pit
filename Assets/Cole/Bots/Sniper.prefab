@@ -267,6 +267,7 @@ MonoBehaviour:
   gunCooldown: 1
   bulletDamage: 40
   explosion: {fileID: 0}
+  gunSounds: []
 --- !u!114 &114774586880917028
 MonoBehaviour:
   m_ObjectHideFlags: 1
