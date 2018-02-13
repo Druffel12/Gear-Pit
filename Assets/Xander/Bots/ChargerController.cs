@@ -25,6 +25,8 @@ public class ChargerController : MonoBehaviour {
 
         reTargTimerBase += Random.Range(-0.25f, 0.5f);
         reTargTimer = reTargTimerBase;
+
+        Invoke("PlaySound", Random.Range(0.0f, 2.0f));
     }
 
     // Update is called once per frame
@@ -84,6 +86,11 @@ public class ChargerController : MonoBehaviour {
         {
             ChargerHivemind.target = target;
         }
+    }
+
+    private void PlaySound()
+    {
+        GetComponent<AudioSource>().Play();
     }
 
 }
