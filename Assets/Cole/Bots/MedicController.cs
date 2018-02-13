@@ -10,6 +10,9 @@ public class MedicController : MonoBehaviour
     private LevelManager manager;
     public Battlebot allyBot;
     public float HealDist;
+    int healCount = 5;
+    float HealTimer;
+    public float HealDelay;
 
 	// Use this for initialization
 	void Start ()
@@ -25,7 +28,8 @@ public class MedicController : MonoBehaviour
          if (ally == null)
          {
              ally = manager.FindClosestBotTo(transform.position, bot.team);
-             allyBot = ally.GetComponent<Battlebot>(); 
+             allyBot = ally.GetComponent<Battlebot>();
+            healCount = 5;
          }
 
         /*   if (ally != null && ally.gameObject.activeSelf)
@@ -40,12 +44,19 @@ public class MedicController : MonoBehaviour
 
         if (Vector3.Distance(transform.position, ally.position) < HealDist)
         {
-            allyBot.Damage(- 10);
-            if (allyBot.GetHealth() == allyBot.maxHealth)
+            HealTimer -= Time.deltaTime;
+            if (HealTimer <= 0)
             {
-                ally = null;
-            }
-            
+                allyBot.Damage(-10);
+
+                HealTimer = HealDelay;
+                healCount--;
+                if (healCount <= 0)
+                {
+                    ally = null;
+                }
+            } 
+ 
             
         }
 
