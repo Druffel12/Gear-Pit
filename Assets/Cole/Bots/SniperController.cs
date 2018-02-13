@@ -27,6 +27,11 @@ public class SniperController : MonoBehaviour
             enemy = manager.FindClosestBotTo(transform.position, 3 - bot.team); 
         }
 
+        if (enemy != null && !enemy.gameObject.activeSelf)
+        {
+            enemy = null;
+        }
+
         else if(enemy == null)
         {
             enemy = OtherBot.transform;    
