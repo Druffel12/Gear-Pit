@@ -5,6 +5,8 @@ using UnityEngine;
 public class ChargerController : MonoBehaviour {
 
     public float attackDist = 3.0f;
+    [Range(0f, 100f)]
+    public float hunterChance = 25.0f;
 
     public Battlebot bot;
     public GameObject bullet;
@@ -17,6 +19,8 @@ public class ChargerController : MonoBehaviour {
     private float reTargTimer;
     private float reTargTimerBase = 1f;
 
+    private bool medicHunter = false;
+
 
 
     private void Start()
@@ -27,6 +31,11 @@ public class ChargerController : MonoBehaviour {
         reTargTimer = reTargTimerBase;
 
         Invoke("PlaySound", Random.Range(0.0f, 2.0f));
+
+        if(Random.Range(0f, 100f) < hunterChance)
+        {
+            medicHunter = true;
+        }
     }
 
     // Update is called once per frame
@@ -40,7 +49,14 @@ public class ChargerController : MonoBehaviour {
         if(target == null)
         {
             // 3-2=1 3-1=2
-            target = manager.FindClosestBotTo(transform.position, 3 - bot.team);
+            if (medicHunter)
+            {
+                target = manager.FindClosestBotTo(transform.position, 3 - bot.team, "Medic(Clone)");
+            }
+            if(target == null)
+            {
+                target = manager.FindClosestBotTo(transform.position, 3 - bot.team);
+            }
         }
 
         if(target != null && !target.gameObject.activeSelf)

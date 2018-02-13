@@ -21,7 +21,7 @@ public class StraferController : MonoBehaviour {
 
     private float strafeDir = 1f;
     private float reTargTimer;
-    private float reTargTimerBase = 1f;
+    private float reTargTimerBase = 5f;
 
     private void Start()
     {
@@ -35,38 +35,24 @@ public class StraferController : MonoBehaviour {
         
         manager = GameObject.FindObjectOfType<LevelManager>();
 
+        StraferHivemindList.minds[bot.team-1].bots.Add(transform);
+
         reTargTimerBase += Random.Range(-0.25f, 0.5f);
         reTargTimer = reTargTimerBase;
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
         if (useHivemind)
         {
-            target = StraferHivemind.target;
-            targIsMelee = StraferHivemind.targetIsMelee;
+            target = StraferHivemindList.minds[bot.team-1].target;
+            targIsMelee = StraferHivemindList.minds[bot.team-1].targetIsMelee;
             SetDistances();
         }
-
-        if (target == null)
-        {
-            FindTarget();
-        }
-
-        if (target != null && !target.gameObject.activeInHierarchy)
-        {
-            target = null;
-        }
-
+        
         if (target != null)
         {
-            reTargTimer -= Time.deltaTime;
-            if(reTargTimer <= 0)
-            {
-                FindTarget();
-                reTargTimer = reTargTimerBase;
-            }
 
             if (Vector3.Distance(transform.position, target.position) > strafeDist)
             {
@@ -103,11 +89,6 @@ public class StraferController : MonoBehaviour {
                 }
             }
         }
-
-        if (useHivemind)
-        {
-            StraferHivemind.target = target;
-        }
     }
 
     private void FindTarget()
@@ -117,6 +98,10 @@ public class StraferController : MonoBehaviour {
         if (target && target.GetComponentInChildren<MeleeWeapon>())
         {
             targIsMelee = true;
+        }
+        else
+        {
+            targIsMelee = false;
         }
         SetDistances();
     }
@@ -137,8 +122,65 @@ public class StraferController : MonoBehaviour {
 
 }
 
-public static class StraferHivemind
+public class StraferHivemind
 {
-    public static Transform target = null;
-    public static bool targetIsMelee = false;
+    public Transform target = null;
+    public bool targetIsMelee = false;
+    public int team;
+    public List<Transform> bots = new List<Transform>();
+    
+    private float reTargTimer;
+    private float reTargTimerBase = 1f;
+
+    public void Update(LevelManager manager)
+    {
+        if (target == null)
+        {
+            FindTarget(manager);
+        }
+
+        if (target != null && !target.gameObject.activeInHierarchy)
+        {
+            target = null;
+        }
+
+        reTargTimer += Time.deltaTime;
+        if(reTargTimer >= reTargTimerBase)
+        {
+            reTargTimer = 0;
+            FindTarget(manager);
+        }
+    }
+
+    private void FindTarget(LevelManager manager)
+    {
+        Vector3 avgPos = Vector3.zero;
+        int botCount = 0;
+        foreach (Transform t in bots)
+        {
+            if (t.gameObject.activeInHierarchy)
+            {
+                avgPos += t.position;
+                ++botCount;
+            }
+        }
+        avgPos /= botCount;
+
+        // 3-2=1 3-1=2
+        target = manager.FindClosestBotTo(avgPos, 3 - team);
+        if (target && target.GetComponentInChildren<MeleeWeapon>())
+        {
+            targetIsMelee = true;
+        }
+        else
+        {
+            targetIsMelee = false;
+        }
+    }
+}
+
+
+public static class StraferHivemindList
+{
+    public static StraferHivemind[] minds = new StraferHivemind[2];
 }

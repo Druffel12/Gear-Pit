@@ -21,7 +21,12 @@ public class LevelManager : MonoBehaviour {
 
     private void Start()
     {
-        if(!testSpawn)
+        StraferHivemindList.minds[0] = new StraferHivemind();
+        StraferHivemindList.minds[0].team = 1;
+        StraferHivemindList.minds[1] = new StraferHivemind();
+        StraferHivemindList.minds[1].team = 2;
+
+        if (!testSpawn)
         {
             team1 = new GameObject[StaticBotList.team1.Length];
             team2 = new GameObject[StaticBotList.team2.Length];
@@ -94,6 +99,11 @@ public class LevelManager : MonoBehaviour {
                 break;
             }
         }
+
+        foreach(StraferHivemind m in StraferHivemindList.minds)
+        {
+            m.Update(this);
+        }
         
         //change to game over screen eventually
         if(!team1alive || !team2alive)
@@ -120,18 +130,20 @@ public class LevelManager : MonoBehaviour {
 
 
 
-    public Transform FindClosestBotTo(Vector3 pos, int team)
+    public Transform FindClosestBotTo(Vector3 pos, int team, string type = "")
     {
         Transform closestEnemy = null;
         if(team == 1)
         {
             foreach (GameObject b in team1)
             {
-                if (closestEnemy == null && b.activeInHierarchy)
+                if (closestEnemy == null && b.activeInHierarchy
+                    && (type == "" || b.name == type))
                 {
                     closestEnemy = b.transform;
                 }
-                else if (b.activeInHierarchy &&
+                else if (closestEnemy != null && b.activeInHierarchy
+                         && (type == "" || b.name == type) &&
                          Vector3.Distance(b.transform.position, pos) <
                          Vector3.Distance(closestEnemy.position, pos))
                 {
@@ -143,11 +155,13 @@ public class LevelManager : MonoBehaviour {
         {
             foreach (GameObject b in team2)
             {
-                if (closestEnemy == null && b.activeInHierarchy)
+                if (closestEnemy == null && b.activeInHierarchy
+                    && (type == "" || b.name == type))
                 {
                     closestEnemy = b.transform;
                 }
-                else if (b.activeInHierarchy &&
+                else if (closestEnemy != null && b.activeInHierarchy
+                         && (type == "" || b.name == type) &&
                          Vector3.Distance(b.transform.position, pos) <
                          Vector3.Distance(closestEnemy.position, pos))
                 {
