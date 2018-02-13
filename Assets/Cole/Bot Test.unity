@@ -204,8 +204,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Bullet: {fileID: 1574948207028048, guid: 37ae877174676f1449d4edf2eb8d0287, type: 2}
-  BotTest: {fileID: 114812748682949880, guid: f8dda832fe018424bb32bb851e083622, type: 2}
-  bot: {fileID: 0}
+  bot: {fileID: 290555415}
+  OtherBot: {fileID: 1420263460}
+--- !u!114 &290555415 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114812748682949880, guid: f8dda832fe018424bb32bb851e083622,
+    type: 2}
+  m_PrefabInternal: {fileID: 835225522}
+  m_Script: {fileID: 11500000, guid: f4414a0d27df0894586540ab2aec01f0, type: 3}
 --- !u!1001 &835225522
 Prefab:
   m_ObjectHideFlags: 0
@@ -253,12 +259,28 @@ Prefab:
     - target: {fileID: 114812748682949880, guid: f8dda832fe018424bb32bb851e083622,
         type: 2}
       propertyPath: gunCooldown
-      value: 0.5
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 114812748682949880, guid: f8dda832fe018424bb32bb851e083622,
         type: 2}
       propertyPath: team
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 23396532410214128, guid: f8dda832fe018424bb32bb851e083622,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c743873cdf130c2479294735732891cd, type: 2}
+    - target: {fileID: 114812748682949880, guid: f8dda832fe018424bb32bb851e083622,
+        type: 2}
+      propertyPath: explosion
+      value: 
+      objectReference: {fileID: 1155047596922636, guid: 46de6787a3f908c4196d5cf937ef3937,
+        type: 2}
+    - target: {fileID: 114812748682949880, guid: f8dda832fe018424bb32bb851e083622,
+        type: 2}
+      propertyPath: bulletDamage
+      value: 40
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f8dda832fe018424bb32bb851e083622, type: 2}
@@ -280,8 +302,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Bullet: {fileID: 1442177288814190, guid: f8dda832fe018424bb32bb851e083622, type: 2}
-  BotTest: {fileID: 114812748682949880, guid: f8dda832fe018424bb32bb851e083622, type: 2}
-  bot: {fileID: 0}
+  bot: {fileID: 1420263463}
+  OtherBot: {fileID: 290555412}
+--- !u!114 &1420263463 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114812748682949880, guid: f8dda832fe018424bb32bb851e083622,
+    type: 2}
+  m_PrefabInternal: {fileID: 1525091086}
+  m_Script: {fileID: 11500000, guid: f4414a0d27df0894586540ab2aec01f0, type: 3}
 --- !u!1001 &1525091086
 Prefab:
   m_ObjectHideFlags: 0
@@ -340,6 +368,89 @@ Prefab:
       propertyPath: maxHealth
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 114812748682949880, guid: f8dda832fe018424bb32bb851e083622,
+        type: 2}
+      propertyPath: explosion
+      value: 
+      objectReference: {fileID: 1155047596922636, guid: 46de6787a3f908c4196d5cf937ef3937,
+        type: 2}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: f8dda832fe018424bb32bb851e083622, type: 2}
+  m_IsPrefabParent: 0
+--- !u!1001 &1893549865
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4737717183312566, guid: f8dda832fe018424bb32bb851e083622, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -2.8143554
+      objectReference: {fileID: 0}
+    - target: {fileID: 4737717183312566, guid: f8dda832fe018424bb32bb851e083622, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4737717183312566, guid: f8dda832fe018424bb32bb851e083622, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -5.33
+      objectReference: {fileID: 0}
+    - target: {fileID: 4737717183312566, guid: f8dda832fe018424bb32bb851e083622, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4737717183312566, guid: f8dda832fe018424bb32bb851e083622, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4737717183312566, guid: f8dda832fe018424bb32bb851e083622, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4737717183312566, guid: f8dda832fe018424bb32bb851e083622, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4737717183312566, guid: f8dda832fe018424bb32bb851e083622, type: 2}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 195537207668454166, guid: f8dda832fe018424bb32bb851e083622,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114812748682949880, guid: f8dda832fe018424bb32bb851e083622,
+        type: 2}
+      propertyPath: gunCooldown
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075663611426402, guid: f8dda832fe018424bb32bb851e083622, type: 2}
+      propertyPath: m_Name
+      value: BotTest (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114812748682949880, guid: f8dda832fe018424bb32bb851e083622,
+        type: 2}
+      propertyPath: maxHealth
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 114812748682949880, guid: f8dda832fe018424bb32bb851e083622,
+        type: 2}
+      propertyPath: explosion
+      value: 
+      objectReference: {fileID: 1155047596922636, guid: 46de6787a3f908c4196d5cf937ef3937,
+        type: 2}
+    - target: {fileID: 23396532410214128, guid: f8dda832fe018424bb32bb851e083622,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2ffab015f617cac49aba43ff11fc0b7c, type: 2}
+    - target: {fileID: 114812748682949880, guid: f8dda832fe018424bb32bb851e083622,
+        type: 2}
+      propertyPath: bulletDamage
+      value: -10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f8dda832fe018424bb32bb851e083622, type: 2}
   m_IsPrefabParent: 0
@@ -354,7 +465,6 @@ GameObject:
   - component: {fileID: 2031445309}
   - component: {fileID: 2031445308}
   - component: {fileID: 2031445307}
-  - component: {fileID: 2031445311}
   m_Layer: 0
   m_Name: Plane
   m_TagString: Untagged
@@ -428,23 +538,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2031445311
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2031445306}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a16734eb14262d4db2d954f0a60f6ed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawnRadius: 5
-  spawn1: {fileID: 0}
-  spawn2: {fileID: 0}
-  testSpawn: 0
-  testBot: {fileID: 0}
-  testBot2: {fileID: 0}
 --- !u!1 &2032906524
 GameObject:
   m_ObjectHideFlags: 0
