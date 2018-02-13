@@ -22,11 +22,11 @@ public class MedicController : MonoBehaviour
 	void Update ()
     {
 
-        /* if (ally == null)
+         if (ally == null)
          {
              ally = manager.FindClosestBotTo(transform.position, bot.team);
              allyBot = ally.GetComponent<Battlebot>(); 
-         }*/
+         }
 
         /*   if (ally != null && ally.gameObject.activeSelf)
            {
@@ -41,9 +41,12 @@ public class MedicController : MonoBehaviour
         if (Vector3.Distance(transform.position, ally.position) < HealDist)
         {
             allyBot.Damage(- 10);
-
+            if (allyBot.GetHealth() == allyBot.maxHealth)
+            {
+                ally = null;
+            }
             
-            Debug.Log("Death is stupid");
+            
         }
 
 
