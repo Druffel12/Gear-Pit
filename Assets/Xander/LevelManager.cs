@@ -142,10 +142,10 @@ public class LevelManager : MonoBehaviour {
                 {
                     closestEnemy = b.transform;
                 }
-                else if (b.activeInHierarchy &&
+                else if (closestEnemy != null && b.activeInHierarchy
+                         && (type == "" || b.name == type) &&
                          Vector3.Distance(b.transform.position, pos) <
-                         Vector3.Distance(closestEnemy.position, pos)
-                         && (type == "" || b.name == type))
+                         Vector3.Distance(closestEnemy.position, pos))
                 {
                     closestEnemy = b.transform;
                 }
@@ -160,10 +160,10 @@ public class LevelManager : MonoBehaviour {
                 {
                     closestEnemy = b.transform;
                 }
-                else if (b.activeInHierarchy &&
+                else if (closestEnemy != null && b.activeInHierarchy
+                         && (type == "" || b.name == type) &&
                          Vector3.Distance(b.transform.position, pos) <
-                         Vector3.Distance(closestEnemy.position, pos)
-                         && (type == "" || b.name == type))
+                         Vector3.Distance(closestEnemy.position, pos))
                 {
                     closestEnemy = b.transform;
                 }
