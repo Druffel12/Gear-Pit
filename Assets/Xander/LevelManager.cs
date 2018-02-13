@@ -26,6 +26,8 @@ public class LevelManager : MonoBehaviour {
         StraferHivemindList.minds[1] = new StraferHivemind();
         StraferHivemindList.minds[1].team = 2;
 
+        GetComponent<AudioSource>().clip = StaticBotList.levelMusic;
+
         if (!testSpawn)
         {
             team1 = new GameObject[StaticBotList.team1.Length];
