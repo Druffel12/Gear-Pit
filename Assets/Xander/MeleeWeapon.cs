@@ -20,9 +20,7 @@ public class MeleeWeapon : MonoBehaviour {
     private AudioSource hitAudio;
 
     private Vector3 relpos = Vector3.zero;
-
-    private int starts = 0;
-    private int ends = 0;
+    
 
     private void Start()
     {

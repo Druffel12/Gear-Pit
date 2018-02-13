@@ -120,20 +120,22 @@ public class LevelManager : MonoBehaviour {
 
 
 
-    public Transform FindClosestBotTo(Vector3 pos, int team)
+    public Transform FindClosestBotTo(Vector3 pos, int team, string type = "")
     {
         Transform closestEnemy = null;
         if(team == 1)
         {
             foreach (GameObject b in team1)
             {
-                if (closestEnemy == null && b.activeInHierarchy)
+                if (closestEnemy == null && b.activeInHierarchy
+                    && (type == "" || b.name == type))
                 {
                     closestEnemy = b.transform;
                 }
                 else if (b.activeInHierarchy &&
                          Vector3.Distance(b.transform.position, pos) <
-                         Vector3.Distance(closestEnemy.position, pos))
+                         Vector3.Distance(closestEnemy.position, pos)
+                         && (type == "" || b.name == type))
                 {
                     closestEnemy = b.transform;
                 }
@@ -143,13 +145,15 @@ public class LevelManager : MonoBehaviour {
         {
             foreach (GameObject b in team2)
             {
-                if (closestEnemy == null && b.activeInHierarchy)
+                if (closestEnemy == null && b.activeInHierarchy
+                    && (type == "" || b.name == type))
                 {
                     closestEnemy = b.transform;
                 }
                 else if (b.activeInHierarchy &&
                          Vector3.Distance(b.transform.position, pos) <
-                         Vector3.Distance(closestEnemy.position, pos))
+                         Vector3.Distance(closestEnemy.position, pos)
+                         && (type == "" || b.name == type))
                 {
                     closestEnemy = b.transform;
                 }
