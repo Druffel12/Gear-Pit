@@ -8,6 +8,8 @@ public class MedicController : MonoBehaviour
     public Battlebot bot;
     private Transform ally = null;
     private LevelManager manager;
+    private Battlebot Bot;
+    public float HealDist;
 
 	// Use this for initialization
 	void Start ()
@@ -23,6 +25,23 @@ public class MedicController : MonoBehaviour
         {
             ally = manager.FindClosestBotTo(transform.position, bot.team);
         }
-        	
-	}
+
+        if (ally != null && ally.gameObject.activeSelf)
+        {
+            ally = null;
+        }
+
+        Vector3 lookat = ally.position;
+        transform.LookAt(lookat);
+
+        bot.MoveTo(ally.position);
+
+        if (Vector3.Distance(transform.position, ally.position) < HealDist)
+        {
+          //  Bot.maxHealth ;
+        }
+
+
+
+    }
 }
