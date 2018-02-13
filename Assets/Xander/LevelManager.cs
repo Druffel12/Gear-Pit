@@ -21,7 +21,12 @@ public class LevelManager : MonoBehaviour {
 
     private void Start()
     {
-        if(!testSpawn)
+        StraferHivemindList.minds[0] = new StraferHivemind();
+        StraferHivemindList.minds[0].team = 1;
+        StraferHivemindList.minds[1] = new StraferHivemind();
+        StraferHivemindList.minds[1].team = 2;
+
+        if (!testSpawn)
         {
             team1 = new GameObject[StaticBotList.team1.Length];
             team2 = new GameObject[StaticBotList.team2.Length];
@@ -93,6 +98,11 @@ public class LevelManager : MonoBehaviour {
                 team2alive = true;
                 break;
             }
+        }
+
+        foreach(StraferHivemind m in StraferHivemindList.minds)
+        {
+            m.Update(this);
         }
         
         //change to game over screen eventually
