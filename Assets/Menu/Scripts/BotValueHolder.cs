@@ -67,37 +67,37 @@ public class BotValueHolder : MonoBehaviour {
     {
         DontDestroyOnLoad(gameObject);  
     }
-    public void UpdateTotal1()
+    public void UpdateTotal1(int amt = 1)
     {
-        Bot11++;
+        Bot11 += amt;
     }
-    public void UpdateTotal2()
+    public void UpdateTotal2(int amt = 1)
     {
-        Bot12++;
+        Bot12 += amt;
     }
-    public void UpdateTotal3()
+    public void UpdateTotal3(int amt = 1)
     {
-        Bot13++;    
+        Bot13 += amt;    
     }
-    public void UpdateTotal4()
+    public void UpdateTotal4(int amt = 1)
     {
-        Bot14++;
+        Bot14 += amt;
     }
-    public void UpdateTotal5()
+    public void UpdateTotal5(int amt = 1)
     {
-        Bot21++;
+        Bot21 += amt;
     }
-    public void UpdateTotal6()
+    public void UpdateTotal6(int amt = 1)
     {
-        Bot22++;
+        Bot22 += amt;
     }
-    public void UpdateTotal7()
+    public void UpdateTotal7(int amt = 1)
     {
-        Bot23++;
+        Bot23 += amt;
     }
-    public void UpdateTotal8()
+    public void UpdateTotal8(int amt = 1)
     {
-        Bot24++;
+        Bot24 += amt;
     }
     // Update is called once per frame
 }	

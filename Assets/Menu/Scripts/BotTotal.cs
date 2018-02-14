@@ -13,9 +13,9 @@ public class BotTotal : MonoBehaviour
     {
         Values = FindObjectOfType<BotValueHolder>();
     }
-    public void UpdateTotal()
+    public void UpdateTotal(int amt = 1)
     {
-        Total++;
+        Total += amt;
         BotTotalCount.text = Total.ToString();
         dummy.Select();
     }
