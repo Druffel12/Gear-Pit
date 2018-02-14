@@ -588,7 +588,7 @@ MonoBehaviour:
   team: 2
   maxHealth: 100
   gunCooldown: 1.5
-  bulletDamage: 40
+  bulletDamage: 30
   explosion: {fileID: 1155047596922636, guid: 46de6787a3f908c4196d5cf937ef3937, type: 2}
   gunSounds: []
 --- !u!114 &114718964130149110
