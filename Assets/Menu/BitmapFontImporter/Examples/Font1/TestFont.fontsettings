@@ -8,7 +8,7 @@ Font:
   m_Name: TestFont
   serializedVersion: 5
   m_LineSpacing: 80
-  m_DefaultMaterial: {fileID: 21858727968323146}
+  m_DefaultMaterial: {fileID: 21401496652554154}
   m_FontSize: 72
   m_Texture: {fileID: 0}
   m_AsciiStartOffset: 0
@@ -1229,7 +1229,7 @@ Font:
   m_FontNames: []
   m_FallbackFonts: []
   m_FontRenderingMode: 0
---- !u!21 &21858727968323146
+--- !u!21 &21401496652554154
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
