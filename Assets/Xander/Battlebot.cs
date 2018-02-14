@@ -104,7 +104,14 @@ public class Battlebot : MonoBehaviour {
             b.transform.position = bulletSpawn.position;
             b.transform.rotation = bulletSpawn.rotation;
             Bullet bscript = b.GetComponent<Bullet>();
-            bscript.damage = bulletDamage;
+            if(bscript != null)
+            {
+                bscript.damage = bulletDamage;
+            }
+            else
+            {
+                Destroy(b);
+            }
             b.GetComponent<Rigidbody>().AddForce(b.transform.forward * bulletForce);
             //will make longer eventually, here in case bullet escapes map
             if(gunSounds.Length > 0)

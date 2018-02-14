@@ -52,7 +52,7 @@ public class SniperController : MonoBehaviour
 
             else if (Vector3.Distance(transform.position, enemy.position) > SnipeDist + 7) 
             {
-                bot.MoveTo(transform.position - moveDir);
+                bot.MoveTo(enemy.position);
             }
             // Debug.DrawLine(transform.position, transform.position + (moveDir * 10));
             RaycastHit hit;
