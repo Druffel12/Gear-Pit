@@ -13,7 +13,7 @@ public class MedicController : MonoBehaviour
     int healCount = 5;
     float HealTimer;
     public float HealDelay;
-
+   
 	// Use this for initialization
 	void Start ()
     {
@@ -27,7 +27,7 @@ public class MedicController : MonoBehaviour
 
          if (ally == null)
          {
-             ally = manager.FindClosestBotTo(transform.position, bot.team);
+             ally = manager.findClosestNotMedic(transform.position, bot.team);
              allyBot = ally.GetComponent<Battlebot>();
             healCount = 5;
          }
