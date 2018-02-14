@@ -764,7 +764,7 @@ MonoBehaviour:
   bot: {fileID: 0}
   ally: {fileID: 0}
   allyBot: {fileID: 0}
-  HealDist: 2
+  HealDist: 3
   HealDelay: 5
 --- !u!114 &114369455648378938
 MonoBehaviour:
