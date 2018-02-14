@@ -39,7 +39,7 @@ public class SniperController : MonoBehaviour
 
         if(enemy != null)
         {
-            bot.Shoot(Bullet);
+            //bot.Shoot(Bullet);
             Vector3 moveDir = (transform.position - enemy.position).normalized;
             Vector3 lookat = enemy.position;
             transform.LookAt(lookat);
@@ -58,11 +58,21 @@ public class SniperController : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast(transform.position, transform.forward, out hit))
             {
-                Battlebot trgbot = hit.transform.GetComponent<Battlebot>();
-                if (trgbot != null && trgbot.team != bot.team)
+                
+                    Battlebot trgbot = hit.transform.GetComponent<Battlebot>();
+
+                    if (trgbot != null && trgbot.team != bot.team)
+                    {
+                    //SnipeDist = 20;
+                        bot.Shoot(Bullet);
+                    }
+                    else
                 {
-                    bot.Shoot(Bullet);
+                    bot.MoveTo(enemy.position);
+                    //MOVE REALLY CLOSE TO THE GUY UNTIL THIS ELSE STOPS HAPPENING
                 }
+                
+               
             }
         }
     }
