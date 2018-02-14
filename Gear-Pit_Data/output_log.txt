@@ -1,0 +1,288 @@
+Initialize engine version: 2017.1.0f3 (472613c02cf7)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GTX 770 (ID=0x1184)
+    Vendor:   NVIDIA
+    VRAM:     1989 MB
+    Driver:   22.21.13.8494
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\s179052\Documents\unity\Gear-Pit\Gear-Pit_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\s179052\Documents\unity\Gear-Pit\Gear-Pit_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\s179052\Documents\unity\Gear-Pit\Gear-Pit_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\s179052\Documents\unity\Gear-Pit\Gear-Pit_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\s179052\Documents\unity\Gear-Pit\Gear-Pit_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\s179052\Documents\unity\Gear-Pit\Gear-Pit_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\s179052\Documents\unity\Gear-Pit\Gear-Pit_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\s179052\Documents\unity\Gear-Pit\Gear-Pit_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\s179052\Documents\unity\Gear-Pit\Gear-Pit_Data\Managed\UnityEngine.Timeline.dll (this message is harmless)
+Loading C:\Users\s179052\Documents\unity\Gear-Pit\Gear-Pit_Data\Managed\UnityEngine.Timeline.dll into Unity Child Domain
+Platform assembly: C:\Users\s179052\Documents\unity\Gear-Pit\Gear-Pit_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
+Loading C:\Users\s179052\Documents\unity\Gear-Pit\Gear-Pit_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
+Platform assembly: C:\Users\s179052\Documents\unity\Gear-Pit\Gear-Pit_Data\Managed\ProBuilderCore-Unity5.dll (this message is harmless)
+Loading C:\Users\s179052\Documents\unity\Gear-Pit\Gear-Pit_Data\Managed\ProBuilderCore-Unity5.dll into Unity Child Domain
+Platform assembly: C:\Users\s179052\Documents\unity\Gear-Pit\Gear-Pit_Data\Managed\ProBuilderMeshOps-Unity5.dll (this message is harmless)
+Loading C:\Users\s179052\Documents\unity\Gear-Pit\Gear-Pit_Data\Managed\ProBuilderMeshOps-Unity5.dll into Unity Child Domain
+Platform assembly: C:\Users\s179052\Documents\unity\Gear-Pit\Gear-Pit_Data\Managed\KdTreeLib.dll (this message is harmless)
+Loading C:\Users\s179052\Documents\unity\Gear-Pit\Gear-Pit_Data\Managed\KdTreeLib.dll into Unity Child Domain
+Platform assembly: C:\Users\s179052\Documents\unity\Gear-Pit\Gear-Pit_Data\Managed\pb_Stl.dll (this message is harmless)
+Loading C:\Users\s179052\Documents\unity\Gear-Pit\Gear-Pit_Data\Managed\pb_Stl.dll into Unity Child Domain
+Platform assembly: C:\Users\s179052\Documents\unity\Gear-Pit\Gear-Pit_Data\Managed\Poly2Tri.dll (this message is harmless)
+Loading C:\Users\s179052\Documents\unity\Gear-Pit\Gear-Pit_Data\Managed\Poly2Tri.dll into Unity Child Domain
+Platform assembly: C:\Users\s179052\Documents\unity\Gear-Pit\Gear-Pit_Data\Managed\System.dll (this message is harmless)
+Platform assembly: C:\Users\s179052\Documents\unity\Gear-Pit\Gear-Pit_Data\Managed\System.Core.dll (this message is harmless)
+- Completed reload, in  0.702 seconds
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+The referenced script on this Behaviour (Game Object 'Title Screen') is missing!
+ 
+(Filename:  Line: 1758)
+
+UnloadTime: 0.994680 ms
+Setting up 4 worker threads for Enlighten.
+  Thread -> id: 1ab4 -> priority: 1 
+  Thread -> id: 3628 -> priority: 1 
+  Thread -> id: 35a4 -> priority: 1 
+  Thread -> id: 1f18 -> priority: 1 
+Font size and style overrides are only supported for dynamic fonts. Font 'TestFont' is not dynamic.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+BestFit is only supported for dynamic fonts. Font 'TestFont' is not dynamic.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Font size and style overrides are only supported for dynamic fonts. Font 'TestFont' is not dynamic.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 2.429101 ms
+
+Unloading 48 unused Assets to reduce memory usage. Loaded Objects now: 784.
+Total: 7.792182 ms (FindLiveObjects: 0.068265 ms CreateObjectMapping: 0.062576 ms MarkObjects: 0.302073 ms  DeleteObjects: 7.358130 ms)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at SniperController.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at SniperController.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at SniperController.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at SniperController.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at SniperController.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at SniperController.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+The referenced script on this Behaviour (Game Object 'Title Screen') is missing!
+ 
+(Filename:  Line: 1758)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+NullReferenceException: Object reference not set to an instance of an object
+  at SniperController.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at SniperController.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at SniperController.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+UnloadTime: 6.464141 ms
+
+Unloading 90 unused Assets to reduce memory usage. Loaded Objects now: 1248.
+Total: 1.134623 ms (FindLiveObjects: 0.056603 ms CreateObjectMapping: 0.034985 ms MarkObjects: 0.506868 ms  DeleteObjects: 0.535597 ms)
+
+The referenced script on this Behaviour (Game Object 'Title Screen') is missing!
+ 
+(Filename:  Line: 1758)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.523081 ms
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 1245.
+Total: 0.500895 ms (FindLiveObjects: 0.031003 ms CreateObjectMapping: 0.030719 ms MarkObjects: 0.435474 ms  DeleteObjects: 0.003413 ms)
+
+The referenced script on this Behaviour (Game Object 'Title Screen') is missing!
+ 
+(Filename:  Line: 1758)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.514833 ms
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 1248.
+Total: 0.517677 ms (FindLiveObjects: 0.032141 ms CreateObjectMapping: 0.030150 ms MarkObjects: 0.451403 ms  DeleteObjects: 0.003697 ms)
+
+The referenced script on this Behaviour (Game Object 'Title Screen') is missing!
+ 
+(Filename:  Line: 1758)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.469322 ms
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 1251.
+Total: 0.491224 ms (FindLiveObjects: 0.030434 ms CreateObjectMapping: 0.029866 ms MarkObjects: 0.426941 ms  DeleteObjects: 0.003697 ms)
+
+The referenced script on this Behaviour (Game Object 'Title Screen') is missing!
+ 
+(Filename:  Line: 1758)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.566600 ms
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 1254.
+Total: 0.511419 ms (FindLiveObjects: 0.031857 ms CreateObjectMapping: 0.030434 ms MarkObjects: 0.445145 ms  DeleteObjects: 0.003697 ms)
+
+The referenced script on this Behaviour (Game Object 'Title Screen') is missing!
+ 
+(Filename:  Line: 1758)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.485535 ms
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 1257.
+Total: 0.506015 ms (FindLiveObjects: 0.030434 ms CreateObjectMapping: 0.030150 ms MarkObjects: 0.441447 ms  DeleteObjects: 0.003413 ms)
+
+The referenced script on this Behaviour (Game Object 'Title Screen') is missing!
+ 
+(Filename:  Line: 1758)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.510850 ms
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 1260.
+Total: 0.505162 ms (FindLiveObjects: 0.030719 ms CreateObjectMapping: 0.030150 ms MarkObjects: 0.440594 ms  DeleteObjects: 0.003413 ms)
+
+The referenced script on this Behaviour (Game Object 'Title Screen') is missing!
+ 
+(Filename:  Line: 1758)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.558067 ms
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 1263.
+Total: 0.500611 ms (FindLiveObjects: 0.031288 ms CreateObjectMapping: 0.030150 ms MarkObjects: 0.435190 ms  DeleteObjects: 0.003413 ms)
+
+The referenced script on this Behaviour (Game Object 'Title Screen') is missing!
+ 
+(Filename:  Line: 1758)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.527917 ms
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 1266.
+Total: 0.495775 ms (FindLiveObjects: 0.030719 ms CreateObjectMapping: 0.030719 ms MarkObjects: 0.430639 ms  DeleteObjects: 0.003413 ms)
+
+The referenced script on this Behaviour (Game Object 'Title Screen') is missing!
+ 
+(Filename:  Line: 1758)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.525072 ms
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 1269.
+Total: 0.512273 ms (FindLiveObjects: 0.031572 ms CreateObjectMapping: 0.031003 ms MarkObjects: 0.446283 ms  DeleteObjects: 0.003128 ms)
+
+Font size and style overrides are only supported for dynamic fonts. Font 'TestFont' is not dynamic.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+BestFit is only supported for dynamic fonts. Font 'TestFont' is not dynamic.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Font size and style overrides are only supported for dynamic fonts. Font 'TestFont' is not dynamic.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.864123 ms
+
+Unloading 47 unused Assets to reduce memory usage. Loaded Objects now: 1225.
+Total: 7.958010 ms (FindLiveObjects: 0.048638 ms CreateObjectMapping: 0.030719 ms MarkObjects: 0.318855 ms  DeleteObjects: 7.559512 ms)
+
+The referenced script on this Behaviour (Game Object 'Title Screen') is missing!
+ 
+(Filename:  Line: 1758)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 8.047892 ms
+
+Unloading 160 unused Assets to reduce memory usage. Loaded Objects now: 1279.
+Total: 1.260345 ms (FindLiveObjects: 0.059163 ms CreateObjectMapping: 0.034417 ms MarkObjects: 0.530761 ms  DeleteObjects: 0.635434 ms)
+
+The referenced script on this Behaviour (Game Object 'Title Screen') is missing!
+ 
+(Filename:  Line: 1758)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.591631 ms
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 1276.
+Total: 0.505446 ms (FindLiveObjects: 0.032141 ms CreateObjectMapping: 0.030434 ms MarkObjects: 0.439172 ms  DeleteObjects: 0.003413 ms)
+
+The referenced script on this Behaviour (Game Object 'Title Screen') is missing!
+ 
+(Filename:  Line: 1758)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.482975 ms
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 1279.
+Total: 0.493215 ms (FindLiveObjects: 0.031288 ms CreateObjectMapping: 0.029581 ms MarkObjects: 0.428363 ms  DeleteObjects: 0.003697 ms)
+
+The referenced script on this Behaviour (Game Object 'Title Screen') is missing!
+ 
+(Filename:  Line: 1758)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.491509 ms
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 1282.
+Total: 0.495491 ms (FindLiveObjects: 0.031288 ms CreateObjectMapping: 0.030434 ms MarkObjects: 0.429786 ms  DeleteObjects: 0.003413 ms)
+
+The referenced script on this Behaviour (Game Object 'Title Screen') is missing!
+ 
+(Filename:  Line: 1758)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.589640 ms
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 1285.
+Total: 0.524219 ms (FindLiveObjects: 0.032425 ms CreateObjectMapping: 0.030719 ms MarkObjects: 0.456523 ms  DeleteObjects: 0.003982 ms)
+
+The referenced script on this Behaviour (Game Object 'Title Screen') is missing!
+ 
+(Filename:  Line: 1758)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.548396 ms
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 1288.
+Total: 0.509997 ms (FindLiveObjects: 0.031857 ms CreateObjectMapping: 0.030150 ms MarkObjects: 0.444007 ms  DeleteObjects: 0.003413 ms)
+
