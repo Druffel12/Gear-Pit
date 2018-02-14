@@ -112,7 +112,7 @@ public class LevelManager : MonoBehaviour {
         }
         
         //change to game over screen eventually
-        if(!loadingScene && (!team1alive || !team2alive))
+        if((!loadingScene && (!team1alive || !team2alive)) || Input.GetAxis("Cancel") > 0)
         {
             loadingScene = true;
             Invoke("LoadFromInvoke", 3f);
