@@ -402,9 +402,9 @@ MonoBehaviour:
   bot: {fileID: 114929863990068738}
   bullet: {fileID: 1711347432612356, guid: cf03f21d5dca8fd4fa63e6e8a32d717e, type: 2}
   target: {fileID: 0}
-  baseStrafeDist: 4
-  baseFleeDist: 2
-  meleeDistMod: 5
+  baseStrafeDist: 8
+  baseFleeDist: 4
+  meleeDistMod: 10
   useHivemind: 1
 --- !u!114 &114659909764807766
 MonoBehaviour:
